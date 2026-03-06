@@ -77,9 +77,6 @@ public class Book {
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
-
-	
-
 	public String getPublictiondate() {
 		return publictiondate;
 	}
