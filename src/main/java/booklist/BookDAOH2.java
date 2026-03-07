@@ -105,7 +105,7 @@ public class BookDAOH2 implements BookDAO{
 	public int update(Book book) {
 		String sql = "UPDATE BOOK SET " +
 		            "ISBN=?, TITLE=?, AUTHOR=?, PUBLISHER=?, "+
-		            "PUBLICTIONADATE=?, PRICE=?, CONTENT=?, "+
+		            "PUBLICTIONDATE=?, PRICE=?, CONTENT=?, "+
 		            "BOOKIMAGE=?, RATING=? "+
 		            "WHERE ID=?"; 
 		      try(PreparedStatement ps = conn.prepareStatement(sql)) {
