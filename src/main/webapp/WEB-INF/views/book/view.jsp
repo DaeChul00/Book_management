@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,41 +7,27 @@
 <title>도서 상세보기</title>
 
 <style>
-
 body{
     font-family: Arial;
-    background:#f5f5f5;
+    background-color:#f5f5f5;
 }
 
 .container{
-    width:900px;
-    margin:auto;
+    width:800px;
+    margin:50px auto;
     background:white;
     padding:30px;
-    margin-top:50px;
     border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
-.book-area{
-    display:flex;
-}
-
-.book-image{
-    width:250px;
-}
-
-.book-image img{
-    width:100%;
-}
-
-.book-info{
-    margin-left:40px;
-    width:100%;
+.book-img{
+    width:200px;
 }
 
 table{
     width:100%;
-    border-collapse:collapse;
+    border-collapse: collapse;
 }
 
 td{
@@ -52,25 +36,23 @@ td{
 }
 
 .title{
-    font-size:28px;
+    font-size:24px;
     font-weight:bold;
 }
 
-.price{
-    color:#d32f2f;
-    font-size:22px;
-    font-weight:bold;
+.btn{
+    margin-top:30px;
+    padding:10px 20px;
+    background:#333;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
 }
 
-.rating{
-    color:#ffa000;
+.btn:hover{
+    background:#555;
 }
-
-.content{
-    margin-top:20px;
-    line-height:1.6;
-}
-
 </style>
 
 </head>
@@ -78,58 +60,46 @@ td{
 
 <div class="container">
 
-<div class="book-area">
-
-<div class="book-image">
-<img src="${book.bookimage}">
-</div>
-
-<div class="book-info">
-
-<div class="title">${book.title}</div>
-
 <table>
 
 <tr>
-<td width="120"><b>ISBN</b></td>
-<td>${book.isbn}</td>
+<td rowspan="6" style="width:220px;">
+<img class="book-img" src="${book.bookimage}">
+</td>
+<td class="title">${book.title}</td>
 </tr>
 
 <tr>
-<td><b>저자</b></td>
-<td>${book.author}</td>
+<td>저자 : ${book.author}</td>
 </tr>
 
 <tr>
-<td><b>출판사</b></td>
-<td>${book.publisher}</td>
+<td>출판사 : ${book.publisher}</td>
 </tr>
 
 <tr>
-<td><b>출판일</b></td>
-<td>${book.publictiondate}</td>
+<td>출판일 : ${book.publictiondate}</td>
 </tr>
 
 <tr>
-<td><b>가격</b></td>
-<td class="price">${book.price} 원</td>
+<td>가격 : ${book.price} 원</td>
 </tr>
 
 <tr>
-<td><b>평점</b></td>
-<td class="rating">⭐ ${book.rating}</td>
+<td>평점 : ${book.rating}</td>
+</tr>
+
+<tr>
+<td colspan="2">
+<h3>책 소개</h3>
+<p>${book.content}</p>
+</td>
 </tr>
 
 </table>
 
-<div class="content">
-<h3>책 소개</h3>
-<p>${book.content}</p>
-</div>
-
-</div>
-
-</div>
+<!-- 뒤로가기 버튼 -->
+<button class="btn" onclick="history.back()">목록으로 돌아가기</button>
 
 </div>
 
