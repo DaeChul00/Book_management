@@ -85,9 +85,11 @@ public class BookDAOH2 implements BookDAO{
 	               book.setTitle(rs.getString("TITLE"));
 	               book.setAuthor(rs.getString("AUTHOR"));
 	               book.setPublisher(rs.getString("PUBLISHER"));
-	               book.setPublictiondate(rs.getString("PUBLICTIONADATE"));
+	               book.setPublictiondate(rs.getString("PUBLICTIONDATE"));
 	               book.setPrice(rs.getInt("PRICE"));
 	               book.setBookimage(rs.getString("BOOKIMAGE"));
+	               book.setContent(rs.getString("CONTENT"));
+	               book.setRating(rs.getFloat("RATING"));
 	                   
 	               return book;
 	           }
