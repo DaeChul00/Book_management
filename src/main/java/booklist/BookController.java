@@ -34,6 +34,7 @@ public class BookController extends HttpServlet {
 			req.setAttribute("book",book);
 			req.getRequestDispatcher("/WEB-INF/views/book/view.jsp").forward(req, resp);
 			break;
+
 		default:
 			break;
 		}

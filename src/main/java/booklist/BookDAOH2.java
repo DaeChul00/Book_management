@@ -15,7 +15,7 @@ public class BookDAOH2 implements BookDAO{
 		try{
 			Class.forName("org.h2.Driver");
 			conn=DriverManager
-					.getConnection("jdbc:h2:~/test","sa", "");
+					.getConnection("jdbc:h2:tcp://localhost/~/test","sa", "");
 			System.out.println(conn);
 		}catch (Exception e) {
 			System.out.println("Connection 객체 생성 오류!!");
@@ -80,7 +80,8 @@ public class BookDAOH2 implements BookDAO{
 	           
 	           if (rs.next()) {
 	               Book book = new Book();
-
+	               
+	               book.setId(rs.getInt("ID"));
 	               book.setIsbn(rs.getString("ISBN"));
 	               book.setTitle(rs.getString("TITLE"));
 	               book.setAuthor(rs.getString("AUTHOR"));
