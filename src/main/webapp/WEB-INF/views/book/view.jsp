@@ -99,6 +99,7 @@ td{
 </table>
 
 <!-- 뒤로가기 버튼 -->
+<button class="btn" onclick="location.href='${pageContext.request.contextPath}/books/modify?id=${book.id}'">수정</button>
 <button class="btn" onclick="history.back()">목록으로 돌아가기</button>
 
 </div>

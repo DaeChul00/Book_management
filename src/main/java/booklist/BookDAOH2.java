@@ -81,6 +81,7 @@ public class BookDAOH2 implements BookDAO{
 	           if (rs.next()) {
 	               Book book = new Book();
 
+	               book.setId(rs.getInt("ID"));
 	               book.setIsbn(rs.getString("ISBN"));
 	               book.setTitle(rs.getString("TITLE"));
 	               book.setAuthor(rs.getString("AUTHOR"));
@@ -103,10 +104,10 @@ public class BookDAOH2 implements BookDAO{
 	@Override
 	public int update(Book book) {
 		String sql = "UPDATE BOOK SET " +
-		            "ISBN=?, TITLE=?, AUTHOR=?, PUBLISHER=?, "+
-		            "PUBLICTIONADATE=?, PRICE=?, CONTENT=?, "+
-		            "BOOKIMAGE=?, RATING=? "+
-		            "WHERE ID=?"; 
+	            "ISBN=?, TITLE=?, AUTHOR=?, PUBLISHER=?, "+
+	            "PUBLICTIONDATE=?, PRICE=?, CONTENT=?, "+
+	            "BOOKIMAGE=?, RATING=? "+
+	            "WHERE ID=?";
 		      try(PreparedStatement ps = conn.prepareStatement(sql)) {
 		         ps.setString(1, book.getIsbn());
 		         ps.setString(2, book.getTitle());

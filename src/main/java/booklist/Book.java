@@ -29,6 +29,20 @@ public class Book {
 		this.bookimage = bookimage;
 		this.rating = rating;
 	}
+	
+	public Book(String isbn, String title, String author, String publisher, String publictionadate,
+	        int price, String content, String bookimage, float rating) {
+
+	    this.isbn = isbn;
+	    this.title = title;
+	    this.author = author;
+	    this.publisher = publisher;
+	    this.publictiondate = publictionadate;
+	    this.price = price;
+	    this.content = content;
+	    this.bookimage = bookimage;
+	    this.rating = rating;
+	}
 
 	public int getId() {
 		return id;
@@ -116,9 +130,4 @@ public class Book {
 				+ ", bookimage=" + bookimage + ", rating=" + rating + "]";
 	}
 
-	
-	
-	
-	
-	
 }

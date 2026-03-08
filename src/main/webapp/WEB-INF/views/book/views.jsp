@@ -21,13 +21,35 @@
     .content-preview { color: #777; font-size: 13px; line-height: 1.5; height: 40px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
     .rating-area { margin-top: 10px; color: #479e10; font-weight: bold; }
     .rating-star { color: #479e10; }
+    .headline{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    .insertbtn {
+	background-color: green;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 20px;
+	width: 100px;
+	border-radius: 5px;
+	text-align: center;
+	padding: 10px;
+}
 </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>도서 검색 결과</h2>
-    <hr>
+	<div class="headline">
+    <h2>도서 리스트</h2>
+    <button class="insertbtn"
+        onclick="location.href='${pageContext.request.contextPath}/books/insert'">
+        도서 등록
+    </button>
+	</div>
+	<hr>
     
     <c:forEach var="book" items="${list}">
     <div class="book-item">

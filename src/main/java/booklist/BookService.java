@@ -31,4 +31,13 @@ public class BookService {
 	public Book getBook(int id) {
 		return dao.findById(id);
 	}
+	public boolean insert(String isbn, String title, String author, String publisher, String publictionadate, int price,
+			String content, String bookimage, float rating) {
+		Book book = new Book(isbn, title, author, publisher, publictionadate, price, content, bookimage, rating);
+		int result = dao.insert(book);
+		return result > 0;
+	}
+	public void updateBook(Book book) {
+		dao.update(book);
+	}
 }
