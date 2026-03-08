@@ -37,13 +37,13 @@ public class BookController extends HttpServlet {
 			req.getRequestDispatcher("/WEB-INF/views/book/view.jsp").forward(req, resp);
 			break;
 		case "insert":
-			req.getRequestDispatcher("/WEB-INF/views/book/BookInsertForm.jsp").forward(req, resp);
+			req.getRequestDispatcher("/WEB-INF/views/book/insert.jsp").forward(req, resp);
 			break;
-		case "modify":
+		case "update":
 		    id = Integer.parseInt(req.getParameter("id"));
 		    book = service.getBook(id);
 		    req.setAttribute("book", book);
-		    req.getRequestDispatcher("/WEB-INF/views/book/modify.jsp").forward(req, resp);
+		    req.getRequestDispatcher("/WEB-INF/views/book/update.jsp").forward(req, resp);
 		    break;
 		default:
 			break;

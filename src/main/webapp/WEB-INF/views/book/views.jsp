@@ -44,10 +44,7 @@
 <div class="container">
 	<div class="headline">
     <h2>도서 리스트</h2>
-    <button class="insertbtn"
-        onclick="location.href='${pageContext.request.contextPath}/books/insert'">
-        도서 등록
-    </button>
+    <button class="insertbtn" onclick="location.href='${pageContext.request.contextPath}/books/insert'">도서 등록</button>
 	</div>
 	<hr>
     
